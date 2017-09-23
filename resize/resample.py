@@ -33,7 +33,8 @@ class resample:
             for j in range(1,fy):
                 new_x = round((j * (newwidth + 1)) / (x + 1))
                 new_y = round((i * (newheight + 1)) / (y + 1))
-                output[new_x, new_y] = input[j, i]
+                image[new_x, new_y] = image[j, i]
+               
 
         return image
 
