@@ -25,18 +25,18 @@ class resample:
 
         #Write your code for nearest neighbor interpolation here
 
-        [x, y]=size(image)
-         output = repmat(uint8(0), x * fx, y * fy)
-         [newwidth, newheight] = size(output)
+           orgImgRow,orgImgColumn=image.shape
+           reImgRow=orgImgRow*fx
+           reImgCol=orgImgColumn*fy
+           resizedImage = numpy.zeros((reImgRow,reImgCol,3), numpy.uint8)
+           for i in range(reImgRow-1):
+                for j in range(reImgCol-1):
+                    rowValue=int(math.floor(i/fx))
+                    colValue=int(math.floor(j/fy))
+                    resizedImage[i,j]=image[rowValue,colValue]
         
-        for i in range(1,fx):
-            for j in range(1,fy):
-                new_x = round((j * (newwidth + 1)) / (x + 1))
-                new_y = round((i * (newheight + 1)) / (y + 1))
-                image[new_x, new_y] = image[j, i]
-               
-
-        return image
+        
+           return image
 
 
     def bilinear_interpolation(self, image, fx, fy):
