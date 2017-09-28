@@ -25,9 +25,9 @@ class resample:
 
         #Write your code for nearest neighbor interpolation here
 
-        [x, y]=size(image)
-        output = repmat(uint8(0), x * fx, y * fy)
-        [newwidth, newheight] = size(output)
+         [x, y]=size(image)
+         output = repmat(uint8(0), x * fx, y * fy)
+         [newwidth, newheight] = size(output)
         
         for i in range(1,fx):
             for j in range(1,fy):
