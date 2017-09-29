@@ -9,6 +9,19 @@ class interpolation:
         return the f(unknown) or intentity at unknown"""
 
         #Write your code for linear interpolation here
+        
+        newPoint=unknown
+        intensity_diff=pt2-pt1
+        if(intensity_diff<=0):
+            intensity_diff=1
+
+        a1=pt2-newPoint
+        intensity1=a1/intensity_diff
+        x=intensity1
+        a2=newPoint - pt1
+        intensity2=a2/intensity_diff
+        y=intensity2
+        new_intensity=x+y
 
         return 0
 
