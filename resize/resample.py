@@ -24,19 +24,20 @@ class resample:
         """
 
         #Write your code for nearest neighbor interpolation here
+    
+        row,coloumn=image.shape
+        new_row=row*fx
+        new_column=coloumn*fy
+        output_image = numpy.zeros((new_row,new_column,3), numpy.uint8)
+        for i in range(new_row-1):
+            for j in range(new_column-1):
+                row_value=int(math.floor(i/fx))
+                col_value=int(math.floor(j/fy))
+                output_image[i,j]=image[row_value,col_value]
 
-           orgImgRow,orgImgColumn=image.shape
-           reImgRow=orgImgRow*fx
-           reImgCol=orgImgColumn*fy
-           resizedImage = numpy.zeros((reImgRow,reImgCol,3), numpy.uint8)
-           for i in range(reImgRow-1):
-                for j in range(reImgCol-1):
-                    rowValue=int(math.floor(i/fx))
-                    colValue=int(math.floor(j/fy))
-                    resizedImage[i,j]=image[rowValue,colValue]
         
         
-           return resizedImage
+         return output_image
 
 
     def bilinear_interpolation(self, image, fx, fy):
@@ -48,6 +49,27 @@ class resample:
         """
 
         # Write your code for bilinear interpolation here
+        
+        row, column = image.shape
+        new_row = row * fx
+        new_column = column * fy
+        output_image = numpy.zeros((new_row, new_column, 3), numpy.uint8)
 
-        return image
+        for i in range(new_row - 1):
+            x1 = math.floor(i / fx)
+            x2 = math.ceil(i / fx)
+            
+            for j in range(new_column - 1):
+                y1 = math.floor(j / fy)
+                y2 = math.ceil(j / fy)
+
+                p1 = (x1, y1, image[x1, y1])
+                p2 = (x1, y1, image[x2, y1])
+                p3 = (x1, y2, image[x1, y2])
+                p4 = (x2, y2, image[x2, y2])
+                unknown = (i, j)
+               
+                output_image[i, j] = bilinear_interpolation(p1, p2, p3, p4, unknown)
+
+         return output_image
 
