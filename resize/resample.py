@@ -36,7 +36,7 @@ class resample:
                     resizedImage[i,j]=image[rowValue,colValue]
         
         
-           return image
+           return resizedImage
 
 
     def bilinear_interpolation(self, image, fx, fy):
