@@ -9,6 +9,12 @@ class binary_image:
         returns a histogram"""
 
         hist = [0]*256
+        
+        row,col=image.shape
+
+        for i in range(row):
+            for j in range(col):
+                hist[image[i, j]] += 1
 
 
         return hist
