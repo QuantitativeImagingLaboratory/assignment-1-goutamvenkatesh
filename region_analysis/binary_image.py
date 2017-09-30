@@ -72,6 +72,15 @@ class binary_image:
         returns: a binary image"""
 
         bin_img = image.copy()
+        
+        row, column= binary_img.shape
+
+        for i in range(row):
+            for j in range(column):
+                if bin_img[i,j]>threshold:
+                    bin_img[i,j]=255
+                else:
+                    bin_img[i,j]=0
 
         return bin_img
 
