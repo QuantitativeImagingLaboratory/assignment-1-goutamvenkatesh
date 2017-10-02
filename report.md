@@ -18,7 +18,7 @@ RESIZE -
     unknown point - (i,j). This value is then assigned to the output image's pixel value at (i,j).
     
     
-    2. Interpolation -
+2. Interpolation -
 
 2a - Linear Interpolation -
 
