@@ -11,7 +11,7 @@ RESIZE -
     the float type returned errors. This is why in line # 31, we have declared the two attributes, rows and columns as the integer data       type.
     
     
-1b - Bilinear Interpolation -
+1b - Resizing using bilinear interpolation -
 
     Here, we apply the nearest neighbor technique and map the output image pixels to the appropriate input image's pixels. Using these 
     pixels that are mapped, we perform bilinear interpolation using four points and find out the intensity, or the pixel value at the
