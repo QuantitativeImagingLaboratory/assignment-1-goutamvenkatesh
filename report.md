@@ -34,3 +34,37 @@ RESIZE -
     
     
     
+    
+    
+    
+3. Region Analysis-
+
+3a. Binary Image-
+
+-Compute Histogram -
+
+    For each corresponding pixel value and its intensity, the "hist" list is updated with a counter. Ultimately, this results in a 2d
+    array that contains the count of each kind of pixel of that particular image. This method returns a list.
+    
+    
+-Find Optimal Threshold-
+    
+    First, the histogram is divided into two halves at exactly the midpoint of the graph. From here, we iterate through the first half
+    of the graph and get an optimal threshold value. Simultaneously, we iterate through the second half of the graph and get another
+    optimal value for that half. We keep doing this until the iterations no longer yield a better optimal solution for that particular
+    half of the graph. ultimately, we get the arithmetic mean of both these final values and this is the final threshold of that graph.
+    
+    
+    
+-Binarize-
+
+    This is a fairly simple strategy, where it involves iterating through the entire array of the image and checking if each pixel is
+    above or below the attained threshold value and making that pixel value "0" or "255" based on whether it is above or below the 
+    threshold value.
+    
+
+    
+    
+
+
+    
