@@ -29,5 +29,7 @@ RESIZE -
 2b - Bilinear Interpolation -
 
     Here, using four known points, we calculate one intensity of an unknown point. For this, we use linear interpolation on two known       points, get the intensity value of the unkown point that resides between these two known points. The same is repeated for the two       other known points. Using the resulting values of the points that we just computed, we apply linear interpolation on these two           points again to get the intensity of the unknown point. 
-    Change in intensity between two known points, and the un
+    Change in intensity between two known points are taken and the change in intensity between a known point and the unknown point is       taken (assumed). The change in intensity between the other known point and the unknown point is taken and the arithmetic mean is         calculated.
+    
+    
     
