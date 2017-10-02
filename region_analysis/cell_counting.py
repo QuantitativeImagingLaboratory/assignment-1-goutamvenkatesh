@@ -6,9 +6,68 @@ class cell_counting:
         image: binary image
         return: a list of regions"""
 
-        regions = dict()
+            row, col = image.shape
+            count = 1
+            r = numpy.zeros((row, col), numpy.uint32)
+            r1 = numpy.zeros((row, col), numpy.uint8)
 
-        return regions
+            for j in range(col):
+                for i in range(row):
+                    if image[i, j] == 255:
+
+                        if i == 0 and j > 0:
+                            if r[i, j - 1] == 0:
+                            r[i, j] = count
+                            count = count + 1
+                        if r[i, j - 1] > 0:
+                            r[i, j] = r[i, j - 1]
+
+                    if j == 0 and i > 0:
+                        if r[i - 1, j] > 0:
+                            r[i, j] = r[i - 1, j]
+                        if r[i - 1, j] == 0:
+                            r[i, j] = count
+                            count = count + 1
+
+                    if i - 1 >= 0 and j - 1 >= 0:
+                        if r[i, j - 1] > 0 and r[i - 1, j] == 0:
+                            r[i, j] = r[i, j - 1]
+                        if r[i, j - 1] == 0 and r[i - 1, j] > 0:
+                            r[i, j] = r[i - 1, j]
+                        if r[i, j - 1] == 0 and r[i - 1, j] == 0:
+                            r[i, j] = count
+                            count = count + 1
+
+                        if r[i, j - 1] > 0 and r[i - 1, j] > 0:
+                            r[i, j] = r[i, j - 1]
+                            r[i - 1, j] = r[i, j - 1]
+                            dec = 2
+                            flag = 0
+                            while flag == 0:
+                                if r[i - dec, j] != 0:
+                                    r[i - dec, j] = r[i - dec + 1, j]
+                                    dec = dec + 1
+                                else:
+                                    flag = 1
+
+            s = [0] * count
+            for i in range(row):
+                for j in range(col):
+                    if r[i, j] > 0:
+                        s[r[i, j]] = s[r[i, j]] + 1
+
+            regions = {}
+
+            for i in range(row):
+                for j in range(col):
+                    if r[i, j] != 0:
+                        if r[i, j] in regions:
+                            regions[r[i, j]].append([i, j])
+                        else:
+                            regions[r[i, j]] = [[i, j]]
+                        
+
+            return regions
 
     def compute_statistics(self, region):
         """Compute cell statistics area and location
