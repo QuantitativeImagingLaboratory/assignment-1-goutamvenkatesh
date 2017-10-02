@@ -8,8 +8,8 @@ class cell_counting:
 
             row, col = image.shape
             count = 1
-            r = numpy.zeros((row, col), numpy.uint32)
-            r1 = numpy.zeros((row, col), numpy.uint8)
+            r = numpy.zeros((row, col), numpy.uint8)
+            
 
             for j in range(col):
                 for i in range(row):
