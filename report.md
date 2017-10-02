@@ -10,3 +10,24 @@ RESIZE -
     To make the method accept float values for resizing, i.e., for shrinking or zooming by a factor of 1.3, I had to change the type of       the new rows and columns to a float data type, however populating the output array had to be done with an integer data type since 
     the float type returned errors. This is why in line # 31, we have declared the two attributes, rows and columns as the integer data       type.
     
+    
+1b - Bilinear Interpolation -
+
+    Here, we apply the nearest neighbor technique and map the output image pixels to the appropriate input image's pixels. Using these         pixels that are mapped, we perform bilinear interpolation using four points and find out the intensity, or the pixel value at the         unknown point - (i,j). This value is then assigned to the output image's pixel value at (i,j).
+    
+    
+    
+
+
+
+2. Interpolation -
+
+2a - Linear Interpolation -
+
+    The basic formula for linear interpolation was applied to return a point intensity using two known values.
+    
+2b - Bilinear Interpolation -
+
+    Here, using four known points, we calculate one intensity of an unknown point. For this, we use linear interpolation on two known       points, get the intensity value of the unkown point that resides between these two known points. The same is repeated for the two       other known points. Using the resulting values of the points that we just computed, we apply linear interpolation on these two           points again to get the intensity of the unknown point. 
+    Change in intensity between two known points, and the un
+    
