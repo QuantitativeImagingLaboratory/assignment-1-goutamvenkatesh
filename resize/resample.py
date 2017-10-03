@@ -32,8 +32,8 @@ class resample:
         new_row=row*float(fx)
         new_column=column*float(fy)
         output_image = numpy.zeros((int(new_row), int(new_column), 3),numpy.uint8)
-        for i in range(int(new_row)-1):
-            for j in range(int(new_column)-1):
+        for i in range(new_row-1):
+            for j in range(new_column-1):
                 row_value=math.floor(i/fx)
                 col_value=math.floor(j/fy)
                 output_image[i,j]=image[row_value,col_value]
