@@ -60,8 +60,8 @@ class resample:
         output_image = numpy.zeros((int(new_row), int(new_column), 3), numpy.uint8)
 
         for i in range(int(new_row) - 1):
-            x1 = math.floor(i / fx)
-            x2 = math.ceil(i / fx)
+            x1 = math.floor(float(i) / float(fx))
+            x2 = math.ceil(float(i) / float(fx))
             
             for j in range(int(new_column) - 1):
                 y1 = math.floor(float(j) / float(fy))
