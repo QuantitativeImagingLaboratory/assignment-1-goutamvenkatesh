@@ -129,7 +129,7 @@ class cell_counting:
         returns: image marked with center and area"""
         
         for a in stats.keys():
-            cv2.putText(image, '*' + repr(a) + ',' + repr(stats[a][0]), (int(stats[a][1][1]), int(stats[a][1][0])), cv2.FONT_HERSHEY_SIMPLEX, 
+            im=cv2.putText(image, '*' + repr(a) + ',' + repr(stats[a][0]), (int(stats[a][1][1]), int(stats[a][1][0])), cv2.FONT_HERSHEY_SIMPLEX, 
 
-        return image
+        return im
 
