@@ -26,8 +26,8 @@ class resample:
         #Write your code for nearest neighbor interpolation here
     
         row,coloumn=image.shape
-        new_row=float(row*fx)
-        new_column=float(coloumn*fy)
+        new_row=row*fx
+        new_column=coloumn*fy
         output_image = numpy.zeros((int(new_row),int(new_column),3), numpy.uint8)
         for i in range(int(new_row)-1):
             for j in range(int(new_column)-1):
