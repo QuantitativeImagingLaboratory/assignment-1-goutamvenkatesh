@@ -1,3 +1,6 @@
+import numpy
+import math
+
 class cell_counting:
 
     def blob_coloring(self, image):
