@@ -51,5 +51,6 @@ class interpolation:
         newpt2=pointY4,newInt2
         intensity=linear_interpolation(newpt1,newpt2,newPointY1)
         
+        
 
         return 0
