@@ -37,7 +37,7 @@ class resample:
 
         
         
-         return output_image
+        return output_image
 
 
     def bilinear_interpolation(self, image, fx, fy):
@@ -71,5 +71,5 @@ class resample:
                
                 output_image[i, j] = bilinear_interpolation(p1, p2, p3, p4, unknown)
 
-         return output_image
+        return output_image
 
