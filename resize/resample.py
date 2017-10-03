@@ -16,7 +16,7 @@ class resample:
             return self.bilinear_interpolation(image, fx, fy)
 
         elif interpolation == 'nearest_neighbor':
-            return self.nearest_neighbor(image, fx, fy)
+            return self.bilinear_interpolation(image, fx, fy)
 
     def nearest_neighbor(self, image, fx, fy):
         """resizes an image using bilinear interpolation approximation for resampling
