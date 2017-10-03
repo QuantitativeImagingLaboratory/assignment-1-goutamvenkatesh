@@ -73,7 +73,7 @@ class binary_image:
 
         bin_img = image.copy()
         
-        row, column= binary_img.shape
+        row, column= bin_img.shape
 
         for i in range(row):
             for j in range(column):
