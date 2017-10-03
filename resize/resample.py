@@ -1,5 +1,7 @@
 import numpy
 import math
+from interpolation import interpolation
+interpolate=interpolation()
 
 
 class resample:
@@ -73,7 +75,7 @@ class resample:
                 p4 = (x2, y2, image[x2, y2])
                 unknown = (i, j)
                
-                output_image[i, j] = bilinear_interpolation(p1, p2, p3, p4, unknown)
+                output_image[i, j] = interpolate.bilinear_interpolation(p1, p2, p3, p4, unknown)
 
         return output_image
 
