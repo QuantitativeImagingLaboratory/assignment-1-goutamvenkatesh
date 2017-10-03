@@ -1,6 +1,6 @@
 import numpy
 import math
-from interpolation import interpolation
+from interpolation.py import interpolation
 interpolate=interpolation()
 
 
