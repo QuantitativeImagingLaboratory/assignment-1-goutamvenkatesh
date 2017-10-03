@@ -1,5 +1,6 @@
 import numpy
 import math
+i=interpolation()
 
 class resample:
 
@@ -34,8 +35,8 @@ class resample:
         output_image = numpy.zeros((int(new_row), int(new_column), 3),numpy.uint8)
         for i in range(int(new_row)-1):
             for j in range(int(new_column)-1):
-                row_value=math.floor(i/fx)
-                col_value=math.floor(j/fy)
+                row_value=math.floor(float(i)/float(fx))
+                col_value=math.floor(float(j)/float(fy))
                 output_image[i,j]=image[row_value,col_value]
 
         '''
@@ -72,7 +73,7 @@ class resample:
                 p4 = (x2, y2, image[x2, y2])
                 unknown = (i, j)
                
-                output_image[i, j] = bilinear_interpolation(p1, p2, p3, p4, unknown)
+                output_image[i, j] = i.bilinear_interpolation(p1, p2, p3, p4, unknown)
 
         return output_image
 
