@@ -1,3 +1,4 @@
+import numpy
 class resample:
 
     def resize(self, image, fx = None, fy = None, interpolation = None):
