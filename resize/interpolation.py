@@ -16,11 +16,11 @@ class interpolation:
             intensity_diff=1
 
         a1=pt2-newPoint
-        intensity1=a1/intensity_diff
-        x=intensity1
+        b1=a1/intensity_diff
+        x=intensity1*b1
         a2=newPoint - pt1
-        intensity2=a2/intensity_diff
-        y=intensity2
+        b2=a2/intensity_diff
+        y=intensity2*b2
         new_intensity=x+y
 
         return 0
