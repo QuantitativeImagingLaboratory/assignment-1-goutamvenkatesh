@@ -31,7 +31,7 @@ class resample:
         new_column=coloumn*fy
         new_row=float(new_row)
         new_column=float(new_column)
-        output_image = numpy.zeros((new_row, new_column))
+        output_image = numpy.zeros((new_row, new_column),numpy.uint8)
         for i in range(int(new_row)-1):
             for j in range(int(new_column)-1):
                 row_value=int(math.floor(i/fx))
