@@ -29,7 +29,7 @@ class resample:
         row,coloumn=image.shape
         new_row=int(row*fx)
         new_column=int(coloumn*fy)
-        output_image = numpy.zeros(new_row, new_column), numpy.uint8)
+        output_image = numpy.zeros((new_row, new_column), numpy.uint8)
         for i in range(int(new_row)-1):
             for j in range(int(new_column)-1):
                 row_value=int(math.floor(i/fx))
