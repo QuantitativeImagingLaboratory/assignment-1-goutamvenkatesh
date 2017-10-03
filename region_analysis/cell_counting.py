@@ -1,5 +1,6 @@
 import numpy
 import math
+import cv2
 
 class cell_counting:
 
