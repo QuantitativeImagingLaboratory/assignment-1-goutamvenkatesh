@@ -19,24 +19,25 @@ class cell_counting:
                             if r[i, j - 1] == 0:
                                 r[i, j] = count
                                 count = count + 1
-                        if r[i, j - 1] > 0:
-                            r[i, j] = r[i, j - 1]
+                            if r[i, j - 1] > 0:
+                                r[i, j] = r[i, j - 1]
 
-                    if j == 0 and i > 0:
-                        if r[i - 1, j] > 0:
-                            r[i, j] = r[i - 1, j]
+                        if j == 0 and i > 0:
+                            if r[i - 1, j] > 0:
+                                r[i, j] = r[i - 1, j]
                         if r[i - 1, j] == 0:
                             r[i, j] = count
                             count = count + 1
 
-                    if i - 1 >= 0 and j - 1 >= 0:
-                        if r[i, j - 1] > 0 and r[i - 1, j] == 0:
-                            r[i, j] = r[i, j - 1]
-                        if r[i, j - 1] == 0 and r[i - 1, j] > 0:
-                            r[i, j] = r[i - 1, j]
-                        if r[i, j - 1] == 0 and r[i - 1, j] == 0:
-                            r[i, j] = count
-                            count = count + 1
+                    
+                        if i - 1 >= 0 and j - 1 >= 0:
+                            if r[i, j - 1] > 0 and r[i - 1, j] == 0:
+                                r[i, j] = r[i, j - 1]
+                            if r[i, j - 1] == 0 and r[i - 1, j] > 0:
+                                r[i, j] = r[i - 1, j]
+                            if r[i, j - 1] == 0 and r[i - 1, j] == 0:
+                                r[i, j] = count
+                                count = count + 1
 
                         if r[i, j - 1] > 0 and r[i - 1, j] > 0:
                             r[i, j] = r[i, j - 1]
