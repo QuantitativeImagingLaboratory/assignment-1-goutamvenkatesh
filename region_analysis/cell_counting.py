@@ -80,6 +80,40 @@ class cell_counting:
         # Please print your region statistics to stdout
         # <region number>: <location or center>, <area>
         # print(stats)
+        
+        stats={}
+        count = 1
+        for a in region.keys():
+
+            flag=0
+            for eachCoordinate in region[a]:
+                if(flag==0):
+                    fx=eachCoordinate[0]
+                    fx2=eachCoordinate[0]
+                    fy=eachCoordinate[1]
+                    fy2=eachCoordinate[1]
+                    flag=1
+                else:
+                    if(fx>eachCoordinate[0]):
+                        fx=eachCoordinate[0]
+                    elif(fx2<eachCoordinate[0]):
+                        fx2=eachCoordinate[0]
+                    if (fy > eachCoordinate[1]):
+                        fy = eachCoordinate[1]
+                    elif (fy2 < eachCoordinate[1]):
+                        fy2 = eachCoordinate[1]
+
+            dif1 = fx2 - fx
+            avg1 = dif1 / 2
+            
+            iCnt = fx + avg1
+            dif2 = fy2 - fy
+            
+            avg2 = dif2 / 2
+            
+            jCnt = fy + avg2
+            count=count+1
+            stats[count]=[len(region[a]),[iCnt,jCnt]]
 
         return 0
 
