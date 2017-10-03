@@ -1,6 +1,6 @@
 import numpy
 import math
-from interpolation import interpolation
+from resize.interpolation import interpolation
 i=interpolation()
 
 
