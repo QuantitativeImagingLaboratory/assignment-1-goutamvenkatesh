@@ -58,11 +58,11 @@ class resample:
         new_column = column * float(fy)
         output_image = numpy.zeros((int(new_row), int(new_column), 3), numpy.uint8)
 
-        for i in range(new_row - 1):
+        for i in range(int(new_row) - 1):
             x1 = math.floor(i / fx)
             x2 = math.ceil(i / fx)
             
-            for j in range(new_column - 1):
+            for j in range(int(new_column) - 1):
                 y1 = math.floor(j / fy)
                 y2 = math.ceil(j / fy)
 
