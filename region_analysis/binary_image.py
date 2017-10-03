@@ -65,7 +65,7 @@ class binary_image:
 
     
 
-    def binarize(self, image):
+    def binarize(self, image,threshold):
         """Comptues the binary image of the the input image based on histogram analysis and thresholding
         take as input
         image: an grey scale image
