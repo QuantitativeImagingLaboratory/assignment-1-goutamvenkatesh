@@ -37,5 +37,18 @@ class interpolation:
 
         # Write your code for bilinear interpolation here
         # May b you can reuse or call linear interpolatio method to compute this task
+        
+            X1,Y1, intensity1 = pt1
+            X2,Y2, intensity2 = pt2
+            X3,Y3, intensity3 = pt3
+            X4,Y4, intensity4 = pt4
+            newPointX1,newPointY1 = unknown
+
+            newpt1=linear_interpolation((X1,intensity1),(X2,intensity2),newPointX1)
+            newpt2=linear_interpolation((X3,intensity3),(X4,intensity4),newPointX1)
+            newpt1=pointY1,newInt1
+            newpt2=pointY4,newInt2
+            intensity=linear_interpolation(newpt1,newpt2,newPointY1)
+        
 
         return 0
