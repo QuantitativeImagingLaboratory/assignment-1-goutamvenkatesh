@@ -6,14 +6,14 @@ class cell_counting:
         image: binary image
         return: a list of regions"""
 
-            row, col = image.shape
-            count = 1
-            r = numpy.zeros((row, col), numpy.uint8)
+        row, col = image.shape
+        count = 1
+        r = numpy.zeros((row, col), numpy.uint8)
             
 
-            for j in range(col):
-                for i in range(row):
-                    if image[i, j] == 255:
+        for j in range(col):
+            for i in range(row):
+                if image[i, j] == 255:
 
                         if i == 0 and j > 0:
                             if r[i, j - 1] == 0:
@@ -50,24 +50,24 @@ class cell_counting:
                                 else:
                                     flag = 1
 
-            s = [0] * count
-            for i in range(row):
-                for j in range(col):
-                    if r[i, j] > 0:
-                        s[r[i, j]] = s[r[i, j]] + 1
+        s = [0] * count
+        for i in range(row):
+            for j in range(col):
+                if r[i, j] > 0:
+                    s[r[i, j]] = s[r[i, j]] + 1
 
-            regions = {}
+        regions = {}
 
-            for i in range(row):
-                for j in range(col):
-                    if r[i, j] != 0:
-                        if r[i, j] in regions:
-                            regions[r[i, j]].append([i, j])
-                        else:
+        for i in range(row):
+            for j in range(col):
+                if r[i, j] != 0:
+                    if r[i, j] in regions:
+                        regions[r[i, j]].append([i, j])
+                    else:
                             regions[r[i, j]] = [[i, j]]
                         
 
-            return regions
+        return regions
 
     def compute_statistics(self, region):
         """Compute cell statistics area and location
