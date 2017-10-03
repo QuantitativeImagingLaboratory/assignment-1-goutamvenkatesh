@@ -105,15 +105,14 @@ class cell_counting:
 
             dif1 = fx2 - fx
             avg1 = dif1 / 2
+            i_count = fx + avg1
             
-            iCnt = fx + avg1
             dif2 = fy2 - fy
-            
             avg2 = dif2 / 2
+            j_count = fy + avg2
             
-            jCnt = fy + avg2
             count=count+1
-            stats[count]=[len(region[a]),[iCnt,jCnt]]
+            stats[count]=[len(region[a]),[i_count,j_count]]
 
         return 0
 
