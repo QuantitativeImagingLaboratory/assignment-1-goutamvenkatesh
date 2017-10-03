@@ -1,6 +1,6 @@
 import numpy
 import math
-i=interpolation()
+
 
 class resample:
 
