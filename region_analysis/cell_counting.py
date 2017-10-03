@@ -17,8 +17,8 @@ class cell_counting:
 
                         if i == 0 and j > 0:
                             if r[i, j - 1] == 0:
-                            r[i, j] = count
-                            count = count + 1
+                                r[i, j] = count
+                                count = count + 1
                         if r[i, j - 1] > 0:
                             r[i, j] = r[i, j - 1]
 
