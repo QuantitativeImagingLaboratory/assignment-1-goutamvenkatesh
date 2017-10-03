@@ -28,7 +28,7 @@ class resample:
         """
 
         #Write your code for nearest neighbor interpolation here
-        '''
+        
         row,column=image.shape
         new_row=row*float(fx)
         new_column=column*float(fy)
@@ -39,7 +39,7 @@ class resample:
                 col_value=math.floor(float(j)/float(fy))
                 output_image[i,j]=image[row_value,col_value]
 
-        '''
+        
         
         return output_image
 
