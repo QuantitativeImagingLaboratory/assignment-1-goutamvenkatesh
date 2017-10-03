@@ -64,8 +64,8 @@ class resample:
             x2 = math.ceil(i / fx)
             
             for j in range(int(new_column) - 1):
-                y1 = math.floor(j / fy)
-                y2 = math.ceil(j / fy)
+                y1 = math.floor(float(j) / float(fy))
+                y2 = math.ceil(float(j) / float(fy))
 
                 p1 = (x1, y1, image[x1, y1])
                 p2 = (x1, y1, image[x2, y1])
@@ -73,7 +73,7 @@ class resample:
                 p4 = (x2, y2, image[x2, y2])
                 unknown = (i, j)
                
-                output_image[i, j] = i.bilinear_interpolation(p1, p2, p3, p4, unknown)
+                output_image[i, j] = bilinear_interpolation(p1, p2, p3, p4, unknown)
 
         return output_image
 
