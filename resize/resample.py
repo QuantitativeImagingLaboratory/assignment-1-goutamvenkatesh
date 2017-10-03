@@ -1,6 +1,6 @@
 import numpy
 import math
-from resize.interpolation import bilinear_interpolation
+from resize.interpolation import interpolation
 i=interpolation()
 
 
