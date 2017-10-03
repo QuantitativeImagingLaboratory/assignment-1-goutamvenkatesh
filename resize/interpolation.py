@@ -47,8 +47,8 @@ class interpolation:
 
         newpt1=self.linear_interpolation((X1,intensity1),(X2,intensity2),newPointX1)
         newpt2=self.linear_interpolation((X3,intensity3),(X4,intensity4),newPointX1)
-        newpt1=pointY1,newInt1
-        newpt2=pointY4,newInt2
+        newpt1=Y1,newInt1
+        newpt2=Y4,newInt2
         intensity=self.linear_interpolation(newpt1,newpt2,newPointY1)
         
         
