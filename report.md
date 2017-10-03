@@ -6,9 +6,16 @@ RESIZE -
 
     The shape attribute was used to fetch the number of rows and columns of pixels of the particular image passed to that function.
     iterations were done on these fetched rows and columns of pixels. A color attrbute is also present in the "shape" attribute, but it 
-    can be ignored if we're working with gray scale images. If the image is a colored one, we have to iterate through 3 primary colors -       Red, Green and Blue. 
-    To make the method accept float values for resizing, i.e., for shrinking or zooming by a factor of 1.3, I had to change the type of       the new rows and columns to a float data type, however populating the output array had to be done with an integer data type since 
-    the float type returned errors. This is why in line # 31, we have declared the two attributes, rows and columns as the integer data       type.
+    can be ignored if we're working with gray scale images. If the image is a colored one, we have to iterate through 3 primary colors -     Red, Green and Blue. 
+    To make the method accept float values for resizing, i.e., for shrinking or zooming by a factor of 1.3, I had to change the type of 
+    the new rows and columns to a float data type, however populating the output array had to be done with an integer data type since 
+    the float type returned errors. This is why in line # 31, we have declared the two attributes, rows and columns as the integer data type.
+    
+    Here, we divide each pixel value with the resizing value and accept the floor value of it, i.e., floor(0.3) would be 0. This way, 
+    each pixel in the output image is mapped to the appropriate pixel in the input image. So, if we are resizing the image by a factor 
+    of 3, then fx=3; Now the first pixel of the output image - "1" would be mapped to floor(1/3), which is 0. So, the 0th pixel of the 
+    input image is mapped to the 0th pixel of the output image. Now, the 2nd pixel's value would be floor(2/3), which is also 0. So, the 
+    2nd pixel of the output image is also mapped to the 0th pixel of the input image, i.e., nearest neighbor.
     
     
 1b - Resizing using bilinear interpolation -
