@@ -51,9 +51,9 @@ class resample:
         # Write your code for bilinear interpolation here
         
         row, column = image.shape
-        new_row = row * fx
-        new_column = column * fy
-        output_image = numpy.zeros((new_row, new_column, 3), numpy.uint8)
+        new_row = float(row * fx)
+        new_column = float(column * fy)
+        output_image = numpy.zeros((int(new_row), int(new_column), 3), numpy.uint8)
 
         for i in range(new_row - 1):
             x1 = math.floor(i / fx)
