@@ -71,7 +71,19 @@ RESIZE -
     
 
     
-    
+3b. Cell Counting -
 
+
+- Blob Coloring -
+
+    Here, we consider every possibility of the pixels in the output image. That is, we check if the pixel next to the given pixel is of
+    the same intensity or not, and if it is, we don't increase the count value of that. If it is different, then we mark that pixel as a 
+    different region by increasing the count value.
+    The multiple "if" conditions simply make sure that we take care of every possibility of the occurence of the pixels. That is, we
+    check pixels that are at the extreme left, where we can't base the count on its neighbour, since it doesn't have any, and the pixels
+    for whom we have information of only the diagonal neighbour of it. Here, we compare the diagonal pixel to its adjacent pixel, and 
+    if that adjacent pixel is on top of the given pixel or below it, we retain the count, hence deeming it to be under the same region.
+    
+   
 
     
