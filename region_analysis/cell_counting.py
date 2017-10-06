@@ -130,6 +130,6 @@ class cell_counting:
         
         for a in stats.keys():
             cv2.putText(image, '*' + repr(a) + ',' + repr(stats[a][0]), (int(stats[a][1][1]), int(stats[a][1][0])), cv2.FONT_HERSHEY_SIMPLEX, 
-
+        return
         
 
