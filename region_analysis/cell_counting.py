@@ -119,7 +119,7 @@ class cell_counting:
             count=count+1
             stats[count]=[len(region[a]),[i_count,j_count]]
 
-        return 0
+        return stats
 
     def mark_regions_image(self, image, stats):
         """Creates a new image with computed stats
@@ -130,6 +130,6 @@ class cell_counting:
         
         for a in stats.keys():
             cv2.putText(image, '*' + repr(a) + ',' + repr(stats[a][0]), (int(stats[a][1][1]), int(stats[a][1][0])), cv2.FONT_HERSHEY_SIMPLEX, 
-        return
+        return image
         
 
