@@ -37,7 +37,9 @@ RESIZE -
     points, get the intensity value of the unkown point that resides between these two known points. The same is repeated for the two
     other known points. Using the resulting values of the points that we just computed, we apply linear interpolation on these two 
     points again to get the intensity of the unknown point. 
-    Change in intensity between two known points are taken and the change in intensity between a known point and the unknown point is       taken (assumed). The change in intensity between the other known point and the unknown point is taken and the arithmetic mean is         calculated.
+    Change in intensity between two known points are taken and the change in intensity between a known point and the unknown point is 
+    taken (assumed). The change in intensity between the other known point and the unknown point is taken and the arithmetic mean is
+    calculated.
     
     
     
@@ -50,16 +52,19 @@ RESIZE -
 
 -Compute Histogram -
 
-    For each corresponding pixel value and its intensity, the "hist" list is updated with a counter. Ultimately, this results in a 2d
-    array that contains the count of each kind of pixel of that particular image. This method returns a list.
+    For each corresponding pixel value and its intensity, the "hist" list is updated with a counter sort of variable that adds up the
+    total number of pixels of that particular intensity. Ultimately, this results in a 2d array that contains the count of each kind of 
+    pixel of that particular image. This method returns a list.
     
     
 -Find Optimal Threshold-
     
     First, the histogram is divided into two halves at exactly the midpoint of the graph. From here, we iterate through the first half
-    of the graph and get an optimal threshold value. Simultaneously, we iterate through the second half of the graph and get another
-    optimal value for that half. We keep doing this until the iterations no longer yield a better optimal solution for that particular
-    half of the graph. ultimately, we get the arithmetic mean of both these final values and this is the final threshold of that graph.
+    of the graph and compute the expectation of that particular variable, for that half of the graph.
+    Simultaneously, we iterate through the second half of the graph and get another value for expectation which corresponds to the 
+    second half of the graph. Now, this represents the average value of both halves. Since this is pretty much an arithmetic operation,
+    we compute the mean of these two numbers an dthe resulting number is the threshold value.
+   
     
     
     
@@ -83,9 +88,13 @@ RESIZE -
     check pixels that are at the extreme left, where we can't base the count on its neighbour, since it doesn't have any, and the pixels
     for whom we have information of only the diagonal neighbour of it. Here, we compare the diagonal pixel to its adjacent pixel, and 
     if that adjacent pixel is on top of the given pixel or below it, we retain the count, hence deeming it to be under the same region.
+    Similarly, all the neighbors of that current pixel are checked and the counter is updated which pertains to the number of regions. 
+    Finally, a dictionary with keys as the regions and the values as the number of pixels in that region are returned.
     
    
 
 - Region statistics -
+
+    
 
     
