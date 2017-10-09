@@ -64,17 +64,17 @@ class resample:
         for i in range(int(new_row) - 1):
             x1 = math.floor(float(i) / float(fx))
             x2 = math.ceil(float(i) / float(fx))
-            if x2 >=255:
-                x2 = 255-x2
-            if x1>=255:
-                x1=255-x1
+            if x2 >=254:
+                x2 = 254-x2
+            if x1>=254:
+                x1=254-x1
             for j in range(int(new_column) - 1):
                 y1 = math.floor(float(j) / float(fy))
                 y2 = math.ceil(float(j) / float(fy))
-                if y2==255:
-                    y2=255-y2
-                if y1>=255:
-                    y1=255-y1
+                if y2==254:
+                    y2=254-y2
+                if y1>=254:
+                    y1=254-y1
 
                 p1 = (x1, y1, image[x1, y1])
                 p2 = (x1, y1, image[x2, y1])
