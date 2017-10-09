@@ -97,7 +97,7 @@ RESIZE -
 
     For every region, the number of pixels in that region is counted and returned with that region number.
     For every new region, the pixels are calculated / counted.
-    The centroid is just the average value of the distance from the extreme pixels along the Y-axis of the blob and the extreme 
+    The centroid is just the intersecting value of the distance from the extreme pixels along the Y-axis of the blob and the extreme 
     pixels along the X-axis of the blob. With this, we get the location of the blob, which is the approximate centroid of the blob.
     
     
