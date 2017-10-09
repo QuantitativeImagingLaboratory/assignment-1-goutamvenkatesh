@@ -24,7 +24,7 @@ class interpolation:
         y=intensity2*b2
         new_intensity=x+y
 
-        return 0
+        return new_intensity
 
     def bilinear_interpolation(self, pt1, pt2, pt3, pt4, unknown):
         """Computes the linear interpolation for the unknown values using pt1 and pt2
@@ -53,4 +53,4 @@ class interpolation:
         
         
 
-        return 0
+        return intensity
