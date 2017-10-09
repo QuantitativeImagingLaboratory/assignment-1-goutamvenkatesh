@@ -95,6 +95,19 @@ RESIZE -
 
 - Region statistics -
 
+    For every region, the number of pixels in that region is counted and returned with that region number.
+    For every new region, the pixels are calculated / counted.
+    The centroid is just the average value of the distance from the extreme pixels along the Y-axis of the blob and the extreme 
+    pixels along the X-axis of the blob. With this, we get the location of the blob, which is the approximate centroid of the blob.
     
+    
+
+- Mark Regions -
+
+    Here, the keys of the stats dictionary are taken and iterated through. The keys are basically the region numbers of the blobs.
+    We just use the putText function and write the text, which is the region number and the area of that region. I'm not sure exactly
+    how the putText method works, but I've used it to my best knowledge along with some help. It should mark all the given blobs with 
+    its region number and area.
+
 
     
